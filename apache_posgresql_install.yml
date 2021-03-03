@@ -10,7 +10,7 @@
  
   - name: ensure postgresql is at the latest version
     yum:
-      name: postgresql
+      name: postgresql-server
       state: latest
  
   - name: latest firewalld version installed
