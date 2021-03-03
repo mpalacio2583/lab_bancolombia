@@ -10,8 +10,12 @@
  
   - name: ensure postgresql is at the latest version
     yum:
-      name: postgresql-server
+      name: "{{ item }}"
       state: latest
+    with_items:
+      - postgresql-server
+      - postgresql-contrib
+      - pg_repack
  
   - name: latest firewalld version installed
     yum:
